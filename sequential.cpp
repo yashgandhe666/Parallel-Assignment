@@ -44,8 +44,9 @@ int main() {
         coor[i][0] -> x-coordinate
         coor[i][1] -> y-coordinate
         coor[i][2] -> function evaluation
-        coor[i][3] -> x-velocity
-        coor[i][4] -> y-velocity
+        coor[i][3] -> level number
+        coor[i][4] -> x-velocity
+        coor[i][5] -> y-velocity
         */
         coor[i][0] = (coor_low_lim + static_cast <double> (rand()) /( static_cast <double> (RAND_MAX/(coor_high_lim - coor_low_lim))));
         coor[i][1] = (coor_low_lim + static_cast <double> (rand()) /( static_cast <double> (RAND_MAX/(coor_high_lim - coor_low_lim))));
@@ -81,15 +82,15 @@ int main() {
             for(int k=0; k<LS; k++) {
                 int pt = levels[i-1][k];
                 // Choosing a random level
-                int lev1 = 0 + (rand() % static_cast<int>(i));
-                int lev2 = 0 + (rand() % static_cast<int>(i));
+                int lev1 = rand() % static_cast<int>(i);
+                int lev2 = rand() % static_cast<int>(i);
 
                 if(lev2 < lev1) {
                     swap(lev2, lev1);
                 }
                 // Choosing random points from those levels
-                int pt1 = 0 + (rand() % static_cast<int>(LS));
-                int pt2 = 0 + (rand() % static_cast<int>(LS));
+                int pt1 = rand() % static_cast<int>(LS);
+                int pt2 = rand() % static_cast<int>(LS);
                 int temp1 = levels[lev1][pt1];
                 int temp2 = levels[lev2][pt2];
 
