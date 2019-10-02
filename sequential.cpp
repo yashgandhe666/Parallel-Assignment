@@ -19,6 +19,8 @@ bool comp(vector<double> temp1, vector<double> temp2) {
     return temp1[2] < temp2[2];
 }
 
+
+
 int main() {
     int fes = 0;
     // Domain for coordinates
